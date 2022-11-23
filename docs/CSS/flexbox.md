@@ -11,11 +11,9 @@ tags:
 
 ## Introduction
 
-When first learning CSS it can feel overwhelming when you look at the huge number of properties that are available. Attempting to memorize property names is not the best way to learn CSS. It is more important to understand **concepts**, such as understanding what the **CSS Box Model** is for example. Once you understand the Box Model it becomes easier to understand when to use padding or when to use a margin. Understanding the concepts and the terminology makes it easier to find answers for when you run into problems.
-
 Learning how to properly use **flexbox** can be difficult. There are many different CSS properties related to flexbox and it seems like there are 32 different ways to do the same thing. When I first
 started learning about flexbox I would usually just randomly try different properties until I got
-the layout that I was looking for. I really didn't fully understand flexbox. It never really clicked
+the layout that I was looking for. I didn't fully understand flexbox. It never really clicked
 for me until I gained a proper understanding of the different axes (that's axes as in more than one
 axis).
 
@@ -44,17 +42,34 @@ We have an outer div with three inner divs. We could have used any elements insi
 could have used a span or a paragraph, it doesn't matter. A flex item can be an inline element or a
 block level element.
 
-Since a div is a block level element, our divs are going to be stacked on top of one another by default. We have not turned our outer div into a flex container yet, but as soon as we do our
-divs are going to end up sitting next to each other in a nice little row:
+**The default behavior of flexbox is to align the items in a row.**
 
 ```css
 .container {
   display: flex;
+  flex-direction: row; /* this is unecessary because it is the default */
 }
 ```
 
+Turning our outer div into a flex container the inner divs, which are now flex
+items, are going to end up sitting next to each other in a nice little row:
+
 ![Flexbox Axes](./images/flexbox-image-2.png)
 
-### Flexbox displays items in a row by default
+## Flexbox items flow on the main-axis.
 
-As soon as you set the container to **flex**
+When a flex container's **flex-direction** is **row**, the **main axis** is the x axis,
+or the horizontal axis. The **cross axis** is always the opposite axis from whatever the main axis
+is.
+
+You can see in the diagram above that when the **main axis** is the horizontal axis, the **cross axis**
+is the vertical, or y axis.
+
+## Flip everything around
+
+```css
+.container {
+  display: flex;
+  flex-direction: column; /* changing the flex container to column */
+}
+```
