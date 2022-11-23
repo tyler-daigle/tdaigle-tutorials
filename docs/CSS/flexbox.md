@@ -65,7 +65,7 @@ is.
 You can see in the diagram above that when the **main axis** is the horizontal axis, the **cross axis**
 is the vertical, or y axis.
 
-## Flip everything around
+## Flipping everything around
 
 ```css
 .container {
@@ -73,3 +73,6 @@ is the vertical, or y axis.
   flex-direction: column; /* changing the flex container to column */
 }
 ```
+
+When you set the **flex-direction** to **column**, the flex items line up in a column. The
+axes will also flip, the **main axis** is now the vertical axis and the **cross axis** is now the horizontal axis.
