@@ -41,11 +41,12 @@ We will use this simple HTML as the basis for our discussion of flexbox:
 ```
 
 We have a parent div with three child divs. By default these three divs will be stacked on top of
-each other inside of the parent div since they are block level elements.
+each other inside of the parent div since they are block level elements. There is nothing special
+about this HTML, it is just regular old HTML.
 
 We could have used any elements inside of our parent div, we could have used a span or a paragraph, it doesn't matter. A flex item can be an inline element or a block level element.
 
-**The default behavior of flexbox is to place the flex items in a row.**
+### Turning our div into a flex container.
 
 ```css
 .container {
@@ -56,19 +57,30 @@ We could have used any elements inside of our parent div, we could have used a s
 
 The CSS above turns our parent div into a **flex container**. It causes the child divs, which are now
 **flex items**, to line up in a row and stack side by side. The **flex-direction** property is optional
-here because row is the default **flex-direction**.
+here because **row** is the default **flex-direction**.
 
-:::tip And just for demonstration purposes we will pretend that our child divs actually have some content or size set on them, otherwise they wouldn't actually display at all.
+:::info And just for demonstration purposes we will pretend that our child divs actually have some content or size set on them, otherwise they wouldn't actually display at all.
 :::
+
+Our divs will now be laid out like in the image below:
+
 ![Flexbox Container and Items](./images/flexbox-image-1.png)
 
 ## Two Different Axes
 
 When dealing with flexbox there are two different axes. One axis runs from left to right and the
-other runs from top to bottom. It is also possible to run from right to left or bottom to top using
-**row-reverse** or **column-reverse** but the concept is the same.
+other runs from top to bottom. One axis is called the **main axis** and the other is called
+the **cross axis**. The direction of each axis will change depending on the value of the
+**flex-direction** property. **This is the most important thing to remember**. This isn't like
+in algebra where the x axis is always horizontal and the y axis is always vertical, sometimes
+the **cross axis** is vertical and sometimes the **main axis** is vertical.
 
 These axes determine how flex items line up when added to a flex container.
+
+:::tip
+It is possible to reverse the axes using **row-reverse** and **column-reverse**, but the concepts
+here are still the same.
+:::
 
 ## Flexbox items flow on the main-axis.
 
@@ -81,11 +93,11 @@ is set to **row-reverse**. This means the **main axis** runs from left to right 
 
 ![Main Axis and Cross Axis](./images/flexbox-image-3.png)
 
+## Flipping everything around
+
 If the **flex-container** is set to **column**, items will stack on top of one another in a column.
 The **main axis** now runs from top to bottom or bottom to top if **flex-direction** is set to
 **column-reverse**.
-
-## Flipping everything around
 
 ```css
 .container {
@@ -98,3 +110,7 @@ When you set the **flex-direction** to **column**, the flex items line up in a c
 axes will also flip, the **main axis** is now the vertical axis and the **cross axis** is now the horizontal axis.
 
 ![Main Axis and Cross Axis](./images/flexbox-image-4.png)
+
+## justify-content and align-items
+
+### space-around, space-between, etc...
