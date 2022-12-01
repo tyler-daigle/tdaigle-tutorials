@@ -17,7 +17,7 @@ the layout that I was looking for. I didn't fully understand flexbox. It never r
 for me until I gained a proper understanding of the different axes (that's axes as in more than one
 axis).
 
-## But first, what is the purpose of flexbox?
+## What is the purpose of flexbox?
 
 Flexbox can be used to change how elements are placed on a page. By default, block level elements
 will stack and inline elements will be placed inline. Changing the flow of elements and getting
@@ -46,7 +46,7 @@ about this HTML, it is just regular old HTML.
 
 We could have used any elements inside of our parent div, we could have used a span or a paragraph, it doesn't matter. A flex item can be an inline element or a block level element.
 
-### Turning our div into a flex container.
+## Making flex items line up in a row
 
 ```css
 .container {
@@ -66,7 +66,7 @@ Our divs will now be laid out like in the image below:
 
 ![Flexbox Container and Items](./images/flexbox-image-1.png)
 
-## Two Different Axes
+## Two Different Axes - Main Axis and Cross Axis
 
 When dealing with flexbox there are two different axes. One axis runs from left to right and the
 other runs from top to bottom. One axis is called the **main axis** and the other is called
@@ -77,25 +77,42 @@ the **cross axis** is vertical and sometimes the **main axis** is vertical.
 
 These axes determine how flex items line up when added to a flex container.
 
-:::tip
+:::info
 It is possible to reverse the axes using **row-reverse** and **column-reverse**, but the concepts
 here are still the same.
 :::
 
-## Flexbox items flow on the main-axis.
+## Position flex items using the cross axis and the main axis
 
-### Main Axis === flex-direction
+<!-- :::tip
+Main Axis === flex-direction
+::: -->
 
 If you have a flex container that has its **flex-direction** set to **row**, items inside
 the flex container line up in a row from left to right, or right to left if **flex-direction**
 is set to **row-reverse**. This means the **main axis** runs from left to right (or right to left). The
 **cross axis** is the opposite axis which runs from top to bottom.
 
+If you have a flex container that is set to **row** and you want to adjust how the flex items
+are displayed on the horizontal axis, you would adjust how the items are placed on the **main axis**.
+Since the **flex-direction** is set to **row**, our **main axis** is going horizontal. Our **cross axis** is the other axis, which in this case is the vertical axis. If we wanted to adjust how our
+items are placed along the vertical axis we adjust how the items are placed along the **cross axis**.
+
+:::info
+
+#### As a general rule:
+
+When **flex-direction** is set to **row**, the **main axis** is **horizontal** and
+the **cross axis** is vertical.
+
+When **flex-direction** is set to **column**, the **main axis** is **vertical** and
+the **cross axis** is horizontal.
+:::
 ![Main Axis and Cross Axis](./images/flexbox-image-3.png)
 
-## Flipping everything around
+## Lining up flex items in a column
 
-If the **flex-container** is set to **column**, items will stack on top of one another in a column.
+If the **flex container** is set to **column**, items will stack on top of one another in a column.
 The **main axis** now runs from top to bottom or bottom to top if **flex-direction** is set to
 **column-reverse**.
 
@@ -106,11 +123,57 @@ The **main axis** now runs from top to bottom or bottom to top if **flex-directi
 }
 ```
 
-When you set the **flex-direction** to **column**, the flex items line up in a column. The
-axes will also flip, the **main axis** is now the vertical axis and the **cross axis** is now the horizontal axis.
+When you set the **flex-direction** to **column**, the flex items line up in a column and the
+axes will flip the. The **main axis** is now the vertical axis and the **cross axis** is now the horizontal axis.
+
+:::info
+If you only use **block** level elements inside your flex container which has **flex-direction** set
+to **column**, you won't see much benefit since by default block level elements already stack (or start on
+a line by themselves). You **will** notice the difference when you want to position your flex
+items along the **cross axis**, such as centering items or aligning them to the right or left.
+:::
 
 ![Main Axis and Cross Axis](./images/flexbox-image-4.png)
 
-## justify-content and align-items
+## The two most useful flexbox properties
 
-### space-around, space-between, etc...
+### justify-content - adjust the main axis
+
+If you want to adjust how items are displayed along the **main axis** you use the CSS property
+**justify-content**. This property is applied to the **flex container**, NOT the flex items.
+
+### align-items - adjust the cross axis
+
+To adjust items on the **cross axis** you use the **align-items** property. As mentioned above,
+this is applied to the **flex container**, not the flex items.
+
+Some of the most useful values for **justify-content** and **align-items** are:
+
+- center
+- space-between
+- space-around
+- flex-end
+- flex-start
+
+## Conclusion
+
+The easiest way to get practice with these settings is to check out this [Codesandbox](https://codesandbox.io/s/flexbox-demo-11g6r7?file=/style.css).
+
+The CSS file, style.css, is very heavily commented. You can try changing the values for each of
+the flex containers, .flex-row and .flex-column, and see how the output changes.
+
+There are many other properties that you can edit for flex containers. There are also many ways
+to achieve the same results. Once you understand the difference between the two axes you will have
+a much easier time using flexbox. Understanding the terminology also makes it much easier to find
+answers when you have a question.
+
+## References
+
+There is a lot more to learn about flexbox. Some of the best info comes from MDN. Here are
+some links you can check out:
+
+- [Flexbox](https://developer.mozilla.org/en-US/docs/Glossary/Flexbox)
+- [Main Axis](https://developer.mozilla.org/en-US/docs/Glossary/Main_Axis)
+- [Cross Axis](https://developer.mozilla.org/en-US/docs/Glossary/Cross_Axis)
+- [flex-direction](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-direction)
+- [justify-content](https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content)
