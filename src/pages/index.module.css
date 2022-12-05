@@ -1,23 +1,87 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
+html[data-theme="light"] {
+  --header-color: #579dee;
+  --primary-text: #ccc9c9;
+  --button-text: white;
+  --button-background: #579dee;
+  --strong-color: #579dee;
+  --tagline-text: #203123;
+}
 
-.heroBanner {
-  padding: 4rem 0;
+html[data-theme="dark"] {
+  --header-color: #7dfd19;
+  --primary-text: #ccc9c9;
+  --button-text: #202123;
+  --button-background: #7dfd19;
+  --strong-color: #7dfd19;
+  --tagline-text: #ccc9c9;
+}
+
+.centerHeader {
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
+.largeHeader,
+.smallHeader {
+  color: var(--header-color);
+  margin: 2rem 0;
+}
+
+header .largeHeader {
+  margin: 5rem 0 0 0;
+  font-size: 4rem;
+}
+
+.textTagLine {
+  color: var(--tagline-text);
+  font-size: 1.75rem;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+}
+
+.greenText {
+  color: var(--strong-color);
+  font-weight: bold;
+}
+
+.frontPageSectionContainer {
+  margin-top: 5rem 2rem;
+}
+
+.frontPageSection {
+  margin: 5rem 1rem;
+}
+
+.frontPageImage {
+  height: 130px;
+  width: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+.button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  font-family: inherit;
+  font-weight: bold;
+  padding: 0.5rem 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 800px) {
+  .frontPageSectionContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    max-width: 1700px;
+    margin: 0 auto;
     padding: 2rem;
+    gap: 2rem;
   }
-}
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .sectionContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .sectionContent .button {
+  }
 }
