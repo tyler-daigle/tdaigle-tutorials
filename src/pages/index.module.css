@@ -1,9 +1,9 @@
 html[data-theme="light"] {
-  --header-color: #579dee;
+  --header-color: #106cd4;
   --primary-text: #ccc9c9;
   --button-text: white;
-  --button-background: #579dee;
-  --strong-color: #579dee;
+  --button-background: #106cd4;
+  --strong-color: #106cd4;
   --tagline-text: #203123;
 }
 
@@ -22,6 +22,8 @@ html[data-theme="dark"] {
 
 .largeHeader,
 .smallHeader {
+  font-family: "Russo One", sans-serif;
+  letter-spacing: 0.05rem;
   color: var(--header-color);
   margin: 2rem 0;
 }
@@ -32,6 +34,7 @@ header .largeHeader {
 }
 
 .textTagLine {
+  font-family: "Russo One", sans-serif;
   color: var(--tagline-text);
   font-size: 1.75rem;
   font-weight: bold;

@@ -60,7 +60,7 @@ export default function Index() {
               making a career out of it, I hope that some of the things I write
               will help you, regardless of your age or background.
             </p>
-            <Link className={styles.button} href="#">
+            <Link className={styles.button} href="/docs/intro">
               View Tutorials
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function Index() {
               worked on as well as a collection of many useful resources related
               to web development.
             </p>
-            <Link className={styles.button} href="#">
+            <Link className={styles.button} href="/projects">
               My Projects
             </Link>
           </div>
@@ -89,38 +89,3 @@ export default function Index() {
     </Layout>
   );
 }
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-  return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro"
-          >
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-// export default function Home() {
-//   const { siteConfig } = useDocusaurusContext();
-//   return (
-//     <Layout
-//       title="tdaigle.com - front end web development"
-//       description="Description will go into a meta tag in <head />"
-//     >
-//       <HomepageHeader />
-//       <main>
-//         <HomepageFeatures />
-//       </main>
-//     </Layout>
-//   );
-// }
